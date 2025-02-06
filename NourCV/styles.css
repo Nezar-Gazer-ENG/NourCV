@@ -5,170 +5,211 @@ body {
     padding: 0;
     background-color: #f9f9f9;
     color: #333;
-  }
-  
-  header {
+}
+
+/* Header Section */
+header {
     text-align: center;
     background: url('background.jpg') no-repeat center center/cover;
     padding: 40px 20px;
     color: white;
-  }
-  
-  .profile-picture img {
+}
+
+/* Profile Picture */
+.profile-picture img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     border: 5px solid white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  nav {
+}
+
+/* Navigation Bar */
+nav {
     margin-top: 20px;
-  }
-  
-  nav button {
-    background: #0077b6; /* Dental-themed blue */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Ensures buttons wrap on small screens */
+    gap: 10px;
+}
+
+nav button {
+    background: #0077b6;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
     margin: 5px;
     cursor: pointer;
     border-radius: 5px;
     transition: background 0.3s ease;
-  }
-  
-  nav button:hover {
-    background: #023e8a; /* Darker blue on hover */
-  }
-  
-  main {
+    font-size: 16px; /* Increase size for better mobile accessibility */
+    flex: 1; /* Allows buttons to expand on mobile */
+    min-width: 120px; /* Prevents them from becoming too small */
+}
+
+nav button:hover {
+    background: #023e8a;
+}
+
+/* Main Content */
+main {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  section {
+}
+
+/* Hide sections by default */
+section {
     display: none;
-  }
-  
-  section.active {
+}
+
+/* Show active section */
+section.active {
     display: block;
-  }
-  
-  h2 {
-    text-align: left; /* Left-align headers */
+}
+
+/* Section Titles */
+h2 {
+    text-align: left;
     margin-bottom: 20px;
-    color: #0077b6; /* Dental-themed blue */
-  }
-  
-  /* Card Styles */
-  .card {
+    color: #0077b6;
+}
+
+/* Card Styles */
+.card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ensures content is evenly spaced */
-    align-items: flex-start; /* Aligns text to the left */
-    text-align: left; /* Ensures text remains left-aligned */
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
     background: white;
     padding: 20px;
     margin: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 250px; /* Fixed width */
-    height: 300px; /* Fixed height */
-  }
-  
-  .card h3 {
+    width: 100%; /* Makes cards responsive */
+    max-width: 280px; /* Prevents them from becoming too wide */
+    min-height: 300px; /* Allows flexibility while maintaining structure */
+}
+
+.card h3 {
     width: 100%;
     text-align: center;
-    margin-bottom: 10px; /* Adds spacing below the header */
-  }
-  
-  .card button {
-    margin-top: auto; /* Pushes the button to the bottom */
-    align-self: center; /* Centers the button */
-    background: #0077b6; /* Nice blue color */
+    margin-bottom: 10px;
+}
+
+/* Card Button */
+.card button {
+    margin-top: auto;
+    align-self: center;
+    background: #0077b6;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 12px 15px;
     cursor: pointer;
     border-radius: 5px;
     font-size: 14px;
     font-weight: bold;
     transition: background 0.3s ease, transform 0.2s ease;
-    width: 80%; /* Makes the button uniform in width */
+    width: 80%;
     text-align: center;
-  }
+}
 
-  .card button:hover {
-    background: #023e8a; /* Darker blue on hover */
-    transform: scale(1.05); /* Slight zoom effect */
-  }
+.card button:hover {
+    background: #023e8a;
+    transform: scale(1.05);
+}
 
-
-  .card:hover {
+/* Card Hover Effect */
+.card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card ul {
-    flex-grow: 1; /* Expands to take available space */
+}
+
+/* List inside Cards */
+.card ul {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Ensures the bullet points are aligned at the top */
-    align-items: flex-start; /* Aligns list items to the left */
-    padding-left: 20px; /* Ensures bullet points appear properly */
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 20px;
     margin: 0;
-  }
-  
-  .card ul li {
-    list-style: disc; /* Ensures bullet points are visible */
-    margin-bottom: 5px; /* Adds spacing between bullet points */
-  }
-  
+}
 
-  .card-container {
+.card ul li {
+    list-style: disc;
+    margin-bottom: 5px;
+}
+
+/* Card Container */
+.card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center cards horizontally */
+    justify-content: center;
     gap: 15px;
-  }
-  
-  /* Form Styles */
-  form {
+}
+
+/* Form Styles */
+form {
     margin-top: 20px;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-  }
-  
-  form input, form textarea, form button {
+}
+
+form input, form textarea, form button {
     width: 100%;
     padding: 10px;
     margin: 5px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-  }
-  
-  form button {
-    background: #0077b6; /* Dental-themed blue */
+}
+
+form button {
+    background: #0077b6;
     color: white;
     cursor: pointer;
     transition: background 0.3s ease;
-  }
-  
-  form button:hover {
-    background: #023e8a; /* Darker blue on hover */
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .card {
-      width: 100%;
-      height: auto;
-    }
-  }
+}
 
- 
-  
+form button:hover {
+    background: #023e8a;
+}
+
+/* 🔹 Responsive Design: Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+
+    .card {
+        width: 100%; /* Full width on small screens */
+        min-height: auto; /* Remove fixed height for flexibility */
+    }
+
+    nav {
+        flex-direction: column; /* Stack buttons on smaller screens */
+        align-items: center;
+    }
+
+    nav button {
+        width: 90%; /* Buttons expand to fit screen */
+        font-size: 14px; /* Adjust text size for small screens */
+    }
+
+    h2 {
+        text-align: center; /* Center section titles for better readability */
+    }
+
+    .card-container {
+        flex-direction: column; /* Stack cards in a single column */
+        align-items: center;
+    }
+
+    form {
+        width: 90%;
+    }
+}
